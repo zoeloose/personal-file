@@ -1,0 +1,272 @@
+@import "bootstrap.less";
+@wd-color-white: #fff;
+#header{
+  position:relative;
+  .cover{
+    background:url(../images/bg-3.jpg) no-repeat center;
+    background-size: cover ;
+    background-attachment:fixed;
+  }
+  .overly{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:rgba(255,144,0,0.9);
+  }
+  .avatar{
+    position:relative;
+    width:200px;
+    height:200px;
+    margin:0 auto;
+    background-image:url(../images/onepiece.gif);
+    background-position:center;
+    background-size:cover;
+    border-radius:50%;
+  }
+  .fullheight{
+    display:table;
+    width:100%;
+  }
+  .fullheight-c{
+    height:650px;
+    display:table-cell;
+    vertical-align: middle;
+  }
+  .roll{
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform:rotate(-5deg) ;
+    transform: rotate(-5deg);
+    .motto{
+      position:relative;
+      font-family: "Kaushan Script", cursive;
+      margin-bottom: 50px;
+      font-size: 50px;
+      line-height: 1.3;
+      font-weight: 300;
+    }
+  }
+  .motto:before,.motto:after{
+     content:"—";
+     position:absolute;
+   }
+  .motto:before{
+    left:-50px;
+  }
+  .motto:after{
+    right:-50px;
+  }
+  .social-icons{
+    margin-top:20px;
+  }
+  .icon-github,.icon-csdn,.icon-wx{
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height:24px;
+    background:url(../images/iconlist.png) no-repeat;
+    background-size:cover;
+  }
+  .icon-github{
+    background-position:0 -73px;
+  }
+  .icon-wx{
+    background-position: 0 -33px;
+  }
+}
+#main{
+  //每个大板块内容给到5rem的内边距
+  .about,.exp,.portfolio{
+    padding:5rem 0;
+  }
+  //每个版块的标题
+  .title{
+    h2{
+      font-size:5rem;
+    }
+    margin-bottom:5rem;
+  }
+  //小模块里的个人说明 的标题
+  .subtitle{
+    font-size:3rem;
+  }
+  //联系方式
+  .info{
+    width:90%;
+    li{
+      float:left;
+      width:100%;
+      padding:10px 0;
+    }
+    .info-l,.info-r{
+      display:inline-block;
+      vertical-align:middle;
+      font-size:1.3em;
+    }
+    .info-l{
+      width:40%;
+      font-weight:bold;
+      float:left;
+    }
+    .info-r{
+      width:60%;
+      color:@gray-light;
+      float:right;
+    }
+  }
+  //个人说明
+  .exp{
+    font-family: "microsoft yahei", Arial, serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4d4d4d;
+  }
+/*时间线 start*/
+  .timeline{
+    position:relative;
+    li{
+      position: relative;
+      margin-bottom:20px;
+    }
+    li:after{
+      content:'';
+      display: block;
+      visibility:hidden;
+      clear:both;
+    }
+    li:nth-child(odd) .job{
+      text-align: right;
+    }
+    li:nth-child(even) .job{
+      float:right;
+    }
+  }
+  .timeline:before{
+    top:0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 2px;
+    background-color: #e6e6e6;
+    left: 50%;
+    margin-left: 0px;
+  }
+  //中间的圆形图标框
+  .badge{
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -24px;
+    background-color: #FF9000;
+    display: table;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .icon-exp{
+    display: block;
+    height:42px;
+    background:url(../images/iconlist.png) no-repeat 0 -133px;
+    background-size:cover;
+  }
+  //公司
+  .job{
+    width:45%;
+    div{
+      margin: 0 0 20px 0;
+    }
+    .job-name{
+      color: #000;
+      font-family: "Space Mono", Arial, serif;
+      font-weight: bold;
+    }
+    .job-co{
+      font-size: 16px;
+      font-weight: normal;
+      color: #bfbfbf;
+    }
+  }
+  //集中写媒体查询
+  @media (max-width: 992px){
+    ul.timeline:before {
+      left: 90px;
+    }
+    .badge{
+      left:15px;
+      margin-left:0;
+      top:16px;
+    }
+    .job{
+      float:right;
+      width:80%;
+    }
+  }
+  @media screen and (max-width:768px){
+    .job{
+      text-align: left !important;
+    }
+    //经验的图标下手机端中只向左偏移10px
+    .badge{
+      margin-left:10px;
+      left:15px;
+      top:16px;
+    }
+    //那条灰色的分割线
+    .timeline:before {
+      left:28px;
+    }
+  }
+/*时间线  end*/
+
+ /*作品列表 start*/
+  .demo{
+    padding:6px;
+    a{
+      display:table;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 270px;
+      width: 100%;
+      color: #000;
+      overflow:hidden;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
+      &:hover{
+        text-decoration:none;
+        outline:none;
+        .demo-desc{
+          opacity:1;
+        }
+      }
+    }
+    .demo-bg{
+      background-image:url(../images/demobg-1.png);
+    }
+    .demo-desc{
+      display: table-cell;
+      vertical-align: middle;
+      height: 270px;
+      background: #fff;
+      opacity: 0;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+    }
+  }
+ /*作品列表 end*/
+
+}
